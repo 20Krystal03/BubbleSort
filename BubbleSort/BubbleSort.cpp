@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+// kris
 void BubbleSort(int x[], int l)
 {
     int i, j, temp;
