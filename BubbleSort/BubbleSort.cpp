@@ -1,20 +1,35 @@
-// BubbleSort.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-
+using namespace std;
+void BubbleSort(int x[], int l)
+{
+    int i, j, temp;
+    for (i = 0; i < l - 1; i++)
+    {
+        for (j=0;j<l-i-1;j++)
+        {
+            if (x[j]>x[j+1])
+            {
+                temp = x[j];
+                x[j] = x[j + 1];
+                x[j + 1] = temp;
+            }
+        }
+    }
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+    int kris[] = { 13,6,89,90,2,5,23,46,88,100,7 };
+    int len = sizeof(kris) / sizeof(int);
+    
+    cout << "\nArray Kris before sorting\n";
+    for (int i=0;i<len;i++)
+    {
+        cout << kris[i] << " ";
+    }
+    BubbleSort(kris, len);
+    cout << "\nArray Kris after sorting\n";
+    for (int i = 0; i < len; i++)
+    {
+        cout << kris[i] << " ";
+    }
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
